@@ -9,7 +9,7 @@ body {
 .menubar {
   display: block;
   height: 60px;
-  background-color: #9C27B0;
+  background-color: #1768d1;
   box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.12);
   text-align: center;
 }
@@ -24,6 +24,17 @@ body {
   line-height: 60px;
 }
 
+#hambmenu {
+  content: "";
+  height: 48px;
+  width: 55px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  cursor: pointer;
+  background-image: url("icons8-menu-50.png");
+}
+/*
 #hambmenu {
   position: relative;
   width: 40px;
@@ -46,6 +57,7 @@ body {
   transition: 0.25s ease-in-out;
   padding: 0px;
 }
+*/
 
 .hambclicker {
   content: "";
@@ -58,6 +70,7 @@ body {
   z-index: 9;
 }
 
+/*
 #hambmenu span:nth-child(1) {
   top: 0px;
 }
@@ -91,6 +104,7 @@ body {
   left: 50%;
   opacity: 0;
 }
+*/
 
 #menu {
   position: absolute;

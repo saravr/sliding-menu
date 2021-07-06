@@ -69,7 +69,7 @@ class Menu extends React.Component {
       <div ref="root">
         <div className="menubar">
           <div className="hambclicker" onClick={ this._menuToggle }></div>
-          <div id="hambmenu" className={ menuStatus }><span></span><span></span><span></span><span></span></div>
+          <div id="hambmenu" className={ menuStatus }></div>
           <div className="title">
             <span>{ this.props.title }</span>
           </div>
@@ -81,4 +81,3 @@ class Menu extends React.Component {
 }
 
 export default Menu
-//ReactDOM.render(<Menu title='Asome Title'/>, document.getElementById('root'))
