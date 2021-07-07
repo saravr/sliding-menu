@@ -26,13 +26,14 @@ body {
 
 #hambmenu {
   content: "";
-  height: 48px;
-  width: 55px;
+  height: 25px;
+  width: 25px;
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 15px;
+  left: 15px;
   cursor: pointer;
   background-image: url("icons8-menu-50.png");
+  background-repeat: no-repeat;
 }
 /*
 #hambmenu {
