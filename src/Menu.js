@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { createRef } from 'react';
 
 class MenuLinks extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     // Any number of links can be added here
     this.state = {
       links: [{
@@ -21,7 +21,12 @@ class MenuLinks extends React.Component {
     }
   }
   render() {
-    let links = this.state.links.map((link, i) => <li ref={i + 1}><i aria-hidden="true" className={`fa ${ link.icon }`}></i><a href={link.link} target="_blank">{link.text}</a></li>);
+    let links = this.state.links.map((link, i) => 
+      <li key={i}>
+        <i aria-hidden="true" className={`fa ${ link.icon }`}></i>
+        <a href={link.link} target="_blank" rel="noreferrer">{link.text}</a>
+      </li>
+    );
 
     return (
         <div className={this.props.menuStatus} id='menu'>
@@ -37,23 +42,22 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+        isOpen: false
     }
+    this.rootRef = createRef()
     this._menuToggle = this._menuToggle.bind(this);
     this._handleDocumentClick = this._handleDocumentClick.bind(this);
   }
   componentDidMount() {
-    document.addEventListener('click', this._handleDocumentClick, false);
+      document.addEventListener('click', this._handleDocumentClick, false);
   }
   componentWillUnmount() {
-    document.removeEventListener('click', this._handleDocumentClick, false);
+      document.removeEventListener('click', this._handleDocumentClick, false);
   }
   _handleDocumentClick(e) {
-    if (!this.refs.root.contains(e.target) && this.state.isOpen === true) {
-      this.setState({
-      isOpen: false
-    });
-    };
+      if (!this.rootRef.current.contains(e.target) && this.state.isOpen === true) {
+          this.setState({ isOpen: false });
+      };
   }
   _menuToggle(e) {
     e.stopPropagation();
@@ -65,7 +69,7 @@ class Menu extends React.Component {
     let menuStatus = this.state.isOpen ? 'isopen' : '';
 
     return (
-      <div ref="root">
+      <div ref={this.rootRef}>
         <div className="menubar">
           <div className="hambclicker" onClick={ this._menuToggle }></div>
           <div id="hambmenu" className={ menuStatus }></div>
