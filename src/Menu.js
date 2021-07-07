@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class MenuLinks extends React.Component {
   constructor(props) {

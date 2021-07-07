@@ -1,25 +1,13 @@
-//import React from 'react'
+import React from 'react'
 //import { Container, Navbar, NavbarBrand } from 'react-bootstrap'
 import Menu from './Menu.js'
-
-/*class AppFooter extends React.Component {
-  render() {
-      return(
-          <div className="fixed-bottom">  
-              <Navbar color="dark" dark>
-                  <Container>
-                      <NavbarBrand>Footer</NavbarBrand>
-                  </Container>
-              </Navbar>
-          </div>
-      )
-  }
-}*/
+import Footer from './Footer.js'
 
 function App() {
   return (
     <div className="App">
         <Menu title='Hello, Inc.'/>
+        <Footer/>
     </div>
   );
 }
